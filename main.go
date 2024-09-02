@@ -14,7 +14,7 @@ const (
 )
 
 // adjusts the throttle from -1.0 (hard back) <-> 1.0 (hard forward) to the correct
-// pwm pulse values.
+// pwm pulse values. src: https://sourcegraph.com/github.com/hybridgroup/gophercar/-/blob/cars/hello/main.go?L33-35
 func throttleToPwmWidth(val float64) int {
 	if val > 0 {
 		return int(gobot.Rescale(val, 0, 1, 350, 300))
